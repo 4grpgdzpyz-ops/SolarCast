@@ -1,0 +1,46 @@
+name: Clean Repository
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  squash:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Create orphan branch
+        run: |
+          mkdir /tmp/repo-backup
+
+          # Copy files to preserve
+          cp -r .github /tmp/repo-backup/ 2>/dev/null
+          cp README.md /tmp/repo-backup/ 2>/dev/null || true
+          cp LICENSE /tmp/repo-backup/ 2>/dev/null || true
+          cp .gitignore /tmp/repo-backup/ 2>/dev/null || true
+
+          git checkout --orphan new-main
+
+          git rm -rf . || true
+
+          cp -r /tmp/repo-backup/. .
+
+          git add .
+          git commit -m "Initial commit"
+
+      - name: Force push
+        run: |
+          git branch -M main
+          git push origin main --force
