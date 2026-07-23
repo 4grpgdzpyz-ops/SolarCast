@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion=1;
+	classes={};
+	objectVersion=56;
+	objects={
+
+/* Begin PBXFileReference section */
+		27AB7A5473181677E9D497D3={isa=PBXFileReference;explicitFileType=wrapper.application;includeInIndex=0;path=SolarCast.app;sourceTree=BUILT_PRODUCTS_DIR;};
+		73E1FECCA85163111742D6FE={isa=PBXFileReference;explicitFileType=wrapper.cfbundle;includeInIndex=0;path=SolarCastTests.xctest;sourceTree=BUILT_PRODUCTS_DIR;};
+		5DE24A0370BF41BA5A41E4BE={isa=PBXFileReference;lastKnownFileType=text.plist.xml;name="Info.plist";path="Resources/Info.plist";sourceTree="<group>";};
+		AE36C5BFC61B65BC64E1EFD4={isa=PBXFileReference;lastKnownFileType=text.xcconfig;name="Debug.xcconfig";path="Debug.xcconfig";sourceTree="<group>";};
+		58F02208A1E6A99468703A4E={isa=PBXFileReference;lastKnownFileType=folder.assetcatalog;name="Assets.xcassets";path="Resources/Assets.xcassets";sourceTree="<group>";};
+		010E11AB707243E6B7F88112={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="AppDelegate.swift";path="App/AppDelegate.swift";sourceTree="<group>";};
+		0367DC6E2253F3BB18DD316A={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="DIContainer.swift";path="App/DIContainer.swift";sourceTree="<group>";};
+		C43D78DA51FAC340199FF395={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SolarCastApp.swift";path="App/SolarCastApp.swift";sourceTree="<group>";};
+		98CF1DF7ACBB1FD28B8131D6={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ThemeStore.swift";path="App/ThemeStore.swift";sourceTree="<group>";};
+		615A1EC6F00886619BCCD06F={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="APIKey.swift";path="Domain/Entities/APIKey.swift";sourceTree="<group>";};
+		BAC7302835B0738111569CF7={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ChartDataPoint.swift";path="Domain/Entities/ChartDataPoint.swift";sourceTree="<group>";};
+		04CFAF0DC2EBFD0142E6A5FF={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ForecastPoint.swift";path="Domain/Entities/ForecastPoint.swift";sourceTree="<group>";};
+		763BCEBCE754E4E0FAADAC48={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="PVSite.swift";path="Domain/Entities/PVSite.swift";sourceTree="<group>";};
+		346B740B368149733DD7AC4E={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="QuotaState.swift";path="Domain/Entities/QuotaState.swift";sourceTree="<group>";};
+		207AB3E1CE1BE3129B2A4BC8={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="Scenario.swift";path="Domain/Entities/Scenario.swift";sourceTree="<group>";};
+		EFA81779F10111EB90873921={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="StatsResult.swift";path="Domain/Entities/StatsResult.swift";sourceTree="<group>";};
+		DB9AF9184821D38A2B2768DC={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SunWindow.swift";path="Domain/Entities/SunWindow.swift";sourceTree="<group>";};
+		BFA683A883B990EE0DEF2983={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="UserLocation.swift";path="Domain/Entities/UserLocation.swift";sourceTree="<group>";};
+		4C313806CB2D0337E676A445={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="APIKeyRepository.swift";path="Domain/RepositoryProtocols/APIKeyRepository.swift";sourceTree="<group>";};
+		0643EF60CC461618E167D337={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ForecastRepository.swift";path="Domain/RepositoryProtocols/ForecastRepository.swift";sourceTree="<group>";};
+		54860D38F151DD5AC28F0CC0={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="LocationRepository.swift";path="Domain/RepositoryProtocols/LocationRepository.swift";sourceTree="<group>";};
+		BB813C7DA2B3E053065246FB={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="PVSiteRepository.swift";path="Domain/RepositoryProtocols/PVSiteRepository.swift";sourceTree="<group>";};
+		354AD3C930F8631C77E7A770={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="QuotaRepository.swift";path="Domain/RepositoryProtocols/QuotaRepository.swift";sourceTree="<group>";};
+		790DA97C570A89E1C55018A1={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="BuildChartDataUseCase.swift";path="Domain/UseCases/BuildChartDataUseCase.swift";sourceTree="<group>";};
+		43340396F20D566870EBF6B3={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ComputeStatsUseCase.swift";path="Domain/UseCases/ComputeStatsUseCase.swift";sourceTree="<group>";};
+		57E5580A185923359259B204={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="FetchForecastUseCase.swift";path="Domain/UseCases/FetchForecastUseCase.swift";sourceTree="<group>";};
+		574B874675DB49EC0724DF46={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ManageQuotaUseCase.swift";path="Domain/UseCases/ManageQuotaUseCase.swift";sourceTree="<group>";};
+		9216427D3DBD9AAB5A1AD864={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="APIKeyMapper.swift";path="Core/Mappers/APIKeyMapper.swift";sourceTree="<group>";};
+		B5A76BB192F85CB7D14C6023={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ForecastPointEntityMapper.swift";path="Core/Mappers/ForecastPointEntityMapper.swift";sourceTree="<group>";};
+		46F2108A4E03A47037457A23={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ForecastPointMapper.swift";path="Core/Mappers/ForecastPointMapper.swift";sourceTree="<group>";};
+		75E6F3F26EA2A4EC485C4B3D={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="PVSiteMapper.swift";path="Core/Mappers/PVSiteMapper.swift";sourceTree="<group>";};
+		1B70A1C19163834ACD72F838={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SunWindowFilter.swift";path="Core/Mappers/SunWindowFilter.swift";sourceTree="<group>";};
+		ADE54E39458A7DC94972DAA7={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="MockSolcastAPIClient.swift";path="Core/Networking/MockSolcastAPIClient.swift";sourceTree="<group>";};
+		D829A4E35FBD292CB7A15825={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="NetworkError.swift";path="Core/Networking/NetworkError.swift";sourceTree="<group>";};
+		63D6370E280EA46BDF4D89CC={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ParallelFetchCoordinator.swift";path="Core/Networking/ParallelFetchCoordinator.swift";sourceTree="<group>";};
+		5E73BC50BCCC0B4D2B861252={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SolcastAPIClient.swift";path="Core/Networking/SolcastAPIClient.swift";sourceTree="<group>";};
+		1B5E78B97A86072E9130B38A={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SolcastAPIClientProtocol.swift";path="Core/Networking/SolcastAPIClientProtocol.swift";sourceTree="<group>";};
+		8CE86CCCBD1E351C742B4EAF={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SolcastEndpoint.swift";path="Core/Networking/SolcastEndpoint.swift";sourceTree="<group>";};
+		F4E39FD1B3766B8F846A9978={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ForecastPointDTO.swift";path="Core/Networking/DTOs/ForecastPointDTO.swift";sourceTree="<group>";};
+		590A453F7937C899546A816B={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SolcastResponseDTO.swift";path="Core/Networking/DTOs/SolcastResponseDTO.swift";sourceTree="<group>";};
+		3CDFC19CB5F4D63EE6BD9ECF={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ModelContainerFactory.swift";path="Core/Persistence/ModelContainerFactory.swift";sourceTree="<group>";};
+		0692B0608549AED2F8599014={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SwiftDataAPIKeyRepository.swift";path="Core/Persistence/Repositories/SwiftDataAPIKeyRepository.swift";sourceTree="<group>";};
+		9B9DC8D4AA5C6BE4DD4FAE66={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SwiftDataForecastRepository.swift";path="Core/Persistence/Repositories/SwiftDataForecastRepository.swift";sourceTree="<group>";};
+		E4838B17BB381164CCC38B26={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SwiftDataLocationRepository.swift";path="Core/Persistence/Repositories/SwiftDataLocationRepository.swift";sourceTree="<group>";};
+		376A9191E51276E9F80A52B9={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SwiftDataPVSiteRepository.swift";path="Core/Persistence/Repositories/SwiftDataPVSiteRepository.swift";sourceTree="<group>";};
+		DF9B7B9C1DC1CE24056E7F86={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SwiftDataQuotaRepository.swift";path="Core/Persistence/Repositories/SwiftDataQuotaRepository.swift";sourceTree="<group>";};
+		71CBF0C19E2379CF12F0A162={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="APIKeyEntity.swift";path="Core/Persistence/SchemaV1/APIKeyEntity.swift";sourceTree="<group>";};
+		4140D3C25421B63DE3F66F4D={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ForecastPointEntity.swift";path="Core/Persistence/SchemaV1/ForecastPointEntity.swift";sourceTree="<group>";};
+		F12B170685F323CEFAADA75A={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="LocationEntity.swift";path="Core/Persistence/SchemaV1/LocationEntity.swift";sourceTree="<group>";};
+		A751C11708C2D7ADC353A632={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="PVSiteEntity.swift";path="Core/Persistence/SchemaV1/PVSiteEntity.swift";sourceTree="<group>";};
+		74D076407632987A0A765D80={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="QuotaUsageEntity.swift";path="Core/Persistence/SchemaV1/QuotaUsageEntity.swift";sourceTree="<group>";};
+		A72F4777AE745E6A70DF9830={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="AutoRefreshIntervalCalculator.swift";path="Core/Quota/AutoRefreshIntervalCalculator.swift";sourceTree="<group>";};
+		97E03D0A015E43DC1F26B957={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="QuotaManager.swift";path="Core/Quota/QuotaManager.swift";sourceTree="<group>";};
+		6392C4FD7D1FA2C912B98030={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="QuotaReservationPolicy.swift";path="Core/Quota/QuotaReservationPolicy.swift";sourceTree="<group>";};
+		C90169BAD28BDD73AB732B56={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="QuotaWindowTracker.swift";path="Core/Quota/QuotaWindowTracker.swift";sourceTree="<group>";};
+		A7DBA3400DD2B4F097006EC4={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="BadgeManager.swift";path="Core/Utilities/BadgeManager.swift";sourceTree="<group>";};
+		37948E4A5020A27EA34C7F26={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="UTCCalendar.swift";path="Core/Utilities/UTCCalendar.swift";sourceTree="<group>";};
+		9F65F94B42A94CD59FBCC278={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="BGTaskCoordinator.swift";path="Core/Scheduling/BGTaskCoordinator.swift";sourceTree="<group>";};
+		43AED3F2EB5B2045935C4C24={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="FetchTriggerConfiguration.swift";path="Core/Scheduling/FetchTriggerConfiguration.swift";sourceTree="<group>";};
+		F86F540A3B46DE74605E12DE={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SchedulingEngine.swift";path="Core/Scheduling/SchedulingEngine.swift";sourceTree="<group>";};
+		369E12E5265BAA1F6180EDD9={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="StalenessEvaluator.swift";path="Core/Scheduling/StalenessEvaluator.swift";sourceTree="<group>";};
+		C0F2FC161CBABC0F6A6D6DA7={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SunriseRelativeScheduler.swift";path="Core/Scheduling/SunriseRelativeScheduler.swift";sourceTree="<group>";};
+		87B08276E7D3462BC65A1BA9={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SunWindowCalculator.swift";path="Core/Solar/SunWindowCalculator.swift";sourceTree="<group>";};
+		E0DA4C3236643BE9E8D443D5={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ceeKSolarAdapter.swift";path="Core/Solar/ceeKSolarAdapter.swift";sourceTree="<group>";};
+		42FCE8894F7D336A620B7067={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="BestIntervalCalculator.swift";path="Core/Stats/BestIntervalCalculator.swift";sourceTree="<group>";};
+		87F912088CFDF6998B4A88FA={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ChartDataAssembler.swift";path="Core/Stats/ChartDataAssembler.swift";sourceTree="<group>";};
+		B5FE8260C8FBCEC9AC6E718B={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ScenarioAggregator.swift";path="Core/Stats/ScenarioAggregator.swift";sourceTree="<group>";};
+		C1A77A830022091D17DB74D8={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="StatsEngine.swift";path="Core/Stats/StatsEngine.swift";sourceTree="<group>";};
+		5939AB7C95ABA68ED020AFAA={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="AppLogger.swift";path="Core/Utilities/AppLogger.swift";sourceTree="<group>";};
+		72E4BC461FD21AF1AD7A1CA0={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ColorHex.swift";path="Core/Utilities/ColorHex.swift";sourceTree="<group>";};
+		6BA73CB6A8969885C0CC7E5E={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="DateUTCHelpers.swift";path="Core/Utilities/DateUTCHelpers.swift";sourceTree="<group>";};
+		0EBB939F09C5A302CBA181BA={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="FetchTriggerConfigurationStore.swift";path="Core/Utilities/FetchTriggerConfigurationStore.swift";sourceTree="<group>";};
+		F75B8EE9F6BCB6AECA4CBC74={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ISO8601PeriodParser.swift";path="Core/Utilities/ISO8601PeriodParser.swift";sourceTree="<group>";};
+		239E6C60738015CBD1CA26A2={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="APIKeyEditView.swift";path="Features/APIKeys/APIKeyEditView.swift";sourceTree="<group>";};
+		1190EBE68B6704210138E8E6={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="APIKeyEditViewModel.swift";path="Features/APIKeys/APIKeyEditViewModel.swift";sourceTree="<group>";};
+		FD687BBB5A9E21CBF7AB912E={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ChartLegendPills.swift";path="Features/Charts/ChartLegendPills.swift";sourceTree="<group>";};
+		A121126AFB75F1A6A4C066E1={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ChartLegendView.swift";path="Features/Charts/ChartLegendView.swift";sourceTree="<group>";};
+		FDE7FA0DCD81AED6A2CC7D07={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ChartViewModel.swift";path="Features/Charts/ChartViewModel.swift";sourceTree="<group>";};
+		EDF8FC622D1A59154BDD0787={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ForecastChartCard.swift";path="Features/Charts/ForecastChartCard.swift";sourceTree="<group>";};
+		87A77F42327036765D6E5182={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ForecastChartView.swift";path="Features/Charts/ForecastChartView.swift";sourceTree="<group>";};
+		D345CCD8860905A38BDDCFE8={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="APIUsageCard.swift";path="Features/Dashboard/APIUsageCard.swift";sourceTree="<group>";};
+		DA9BF4966F1D31710DFB5593={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="BestIntervalCard.swift";path="Features/Dashboard/BestIntervalCard.swift";sourceTree="<group>";};
+		D126992433C84AF5022450E7={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="DashboardView.swift";path="Features/Dashboard/DashboardView.swift";sourceTree="<group>";};
+		6B7E2CD04D80174384C20B52={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="DashboardViewModel.swift";path="Features/Dashboard/DashboardViewModel.swift";sourceTree="<group>";};
+		0F4655E7ECC4EECEC38A9CA6={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="DateNavigatorView.swift";path="Features/Dashboard/DateNavigatorView.swift";sourceTree="<group>";};
+		EC2B448D350FE10CED0EEDB8={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="DatePickerSheet.swift";path="Features/Dashboard/DatePickerSheet.swift";sourceTree="<group>";};
+		1DAF7B461675A004DEF56DA5={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ForecastSummaryCard.swift";path="Features/Dashboard/ForecastSummaryCard.swift";sourceTree="<group>";};
+		EFE43B54D42BD4077980AAFC={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="RefreshButton.swift";path="Features/Dashboard/RefreshButton.swift";sourceTree="<group>";};
+		AE45B09AFE3314E4395AC832={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SiteBreakdownCard.swift";path="Features/Dashboard/SiteBreakdownCard.swift";sourceTree="<group>";};
+		2883E2303EA98CDD018E38EF={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="LocationPickerView.swift";path="Features/LocationPicker/LocationPickerView.swift";sourceTree="<group>";};
+		EDC98B060F77D75DE5DFB4DE={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="LocationPickerViewModel.swift";path="Features/LocationPicker/LocationPickerViewModel.swift";sourceTree="<group>";};
+		CC70D16A302C4A4CD625EC26={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="PVSiteEditView.swift";path="Features/PVSites/PVSiteEditView.swift";sourceTree="<group>";};
+		ADCE915228468940650FFA17={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="PVSiteEditViewModel.swift";path="Features/PVSites/PVSiteEditViewModel.swift";sourceTree="<group>";};
+		C0DB7E74309AF2407BEB9302={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="APIKeysSettingsCard.swift";path="Features/Settings/APIKeysSettingsCard.swift";sourceTree="<group>";};
+		A0BE9788A9C389D1E1F06BC4={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="AboutCard.swift";path="Features/Settings/AboutCard.swift";sourceTree="<group>";};
+		CC41FA08B411B190CC9F5EDE={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="AppearanceSettingsCard.swift";path="Features/Settings/AppearanceSettingsCard.swift";sourceTree="<group>";};
+		7DFF855E6029F7D142948948={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="AutoFetchSettingsCard.swift";path="Features/Settings/AutoFetchSettingsCard.swift";sourceTree="<group>";};
+		C34F6D57A28BF0C6172C3EB7={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="AutoRefreshSettingsCard.swift";path="Features/Settings/AutoRefreshSettingsCard.swift";sourceTree="<group>";};
+		6FB4CE642BB26B5A9C8AA859={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="DeveloperSettingsCard.swift";path="Features/Settings/DeveloperSettingsCard.swift";sourceTree="<group>";};
+		D976C57F6CC8002971794BCF={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="LocationSettingsCard.swift";path="Features/Settings/LocationSettingsCard.swift";sourceTree="<group>";};
+		4B92061B231AF9B59BECEDE3={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="PVSitesSettingsCard.swift";path="Features/Settings/PVSitesSettingsCard.swift";sourceTree="<group>";};
+		85E774FCA4D15819B0620E79={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SettingsBackupCard.swift";path="Features/Settings/SettingsBackupCard.swift";sourceTree="<group>";};
+		11755EF3C2290F7F1EEA4F69={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SettingsCard.swift";path="Features/Settings/SettingsCard.swift";sourceTree="<group>";};
+		CAB38BA738E70BDFD68F8511={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SettingsView.swift";path="Features/Settings/SettingsView.swift";sourceTree="<group>";};
+		F4632F9A688185D0B39488D1={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SettingsViewModel.swift";path="Features/Settings/SettingsViewModel.swift";sourceTree="<group>";};
+		7AD461034B11178F80F7F060={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SwipeToDeleteRow.swift";path="Features/Settings/SwipeToDeleteRow.swift";sourceTree="<group>";};
+		4FC46D81F53567EB46F03933={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="FetchForecastUseCaseIntegrationTests.swift";path="SolarCastTests/Integration/FetchForecastUseCaseIntegrationTests.swift";sourceTree="<group>";};
+		ED5DBC3ABBECB6EE0A01AB48={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="PersistenceIntegrationTests.swift";path="SolarCastTests/Integration/PersistenceIntegrationTests.swift";sourceTree="<group>";};
+		335C81D14EE1CB60149899CE={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="AsyncTestHelpers.swift";path="SolarCastTests/Mocks/AsyncTestHelpers.swift";sourceTree="<group>";};
+		FC553CF7D6B1811CF5AC10BC={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="MockAPIKeyRepository.swift";path="SolarCastTests/Mocks/MockAPIKeyRepository.swift";sourceTree="<group>";};
+		DE282E840BC828AD8EA6C42B={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="MockForecastRepository.swift";path="SolarCastTests/Mocks/MockForecastRepository.swift";sourceTree="<group>";};
+		531490A3DB1149B7EAEFDB6E={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="MockLocationRepository.swift";path="SolarCastTests/Mocks/MockLocationRepository.swift";sourceTree="<group>";};
+		DB61B0EEA40E0CAE04B5DFF2={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="MockPVSiteRepository.swift";path="SolarCastTests/Mocks/MockPVSiteRepository.swift";sourceTree="<group>";};
+		66346A756BC9DF0351DED7BC={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="MockQuotaRepository.swift";path="SolarCastTests/Mocks/MockQuotaRepository.swift";sourceTree="<group>";};
+		830AD0292FD1000AB8BC1F7B={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="MockSolarCalculating.swift";path="SolarCastTests/Mocks/MockSolarCalculating.swift";sourceTree="<group>";};
+		CCA8F825E3CA8434DA5BC7E6={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="MockSolcastAPIClient.swift";path="SolarCastTests/Mocks/MockSolcastAPIClient.swift";sourceTree="<group>";};
+		5EA07C88FE8CCFE6591B4D85={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="TestFixtures.swift";path="SolarCastTests/Mocks/TestFixtures.swift";sourceTree="<group>";};
+		2BE92E37E671A047791802FD={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="AutoRefreshIntervalCalculatorTests.swift";path="SolarCastTests/Unit/AutoRefreshIntervalCalculatorTests.swift";sourceTree="<group>";};
+		013A89C7AE66A25F95D7523F={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="DateUTCHelpersTests.swift";path="SolarCastTests/Unit/DateUTCHelpersTests.swift";sourceTree="<group>";};
+		28E2230C055D304B710739CD={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ForecastPointMapperTests.swift";path="SolarCastTests/Unit/ForecastPointMapperTests.swift";sourceTree="<group>";};
+		1464F9D0E1536DAFB7F3567F={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ISO8601PeriodParserTests.swift";path="SolarCastTests/Unit/ISO8601PeriodParserTests.swift";sourceTree="<group>";};
+		D28D36F0A7D1CAC52096FAAD={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="QuotaManagerTests.swift";path="SolarCastTests/Unit/QuotaManagerTests.swift";sourceTree="<group>";};
+		4076E4F62B15BA358E154C05={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ScenarioAggregatorTests.swift";path="SolarCastTests/Unit/ScenarioAggregatorTests.swift";sourceTree="<group>";};
+		92F954FCC8F702C83860D174={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="StatsEngineTests.swift";path="SolarCastTests/Unit/StatsEngineTests.swift";sourceTree="<group>";};
+		5B060EEB494321C563DF9D67={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="SunWindowTests.swift";path="SolarCastTests/Unit/SunWindowTests.swift";sourceTree="<group>";};
+		0BF9C0F2C876E1FC79A6E15A={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="BackupModels.swift";path="Core/Backup/BackupModels.swift";sourceTree="<group>";};
+		C96A053F6F72C207FED9F661={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="BackupService.swift";path="Core/Backup/BackupService.swift";sourceTree="<group>";};
+		D74E8C3EC47C0C4CD7D1E009={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="BackupFileDocument.swift";path="Core/Backup/BackupFileDocument.swift";sourceTree="<group>";};
+		B0799FCBF6B89DC88B1BA1E7={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ChartDataAssemblerTests.swift";path="SolarCastTests/Unit/ChartDataAssemblerTests.swift";sourceTree="<group>";};
+		AAAD820A6FFF21FEE147FF37={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="StalenessEvaluatorTests.swift";path="SolarCastTests/Unit/StalenessEvaluatorTests.swift";sourceTree="<group>";};
+		603FFCC4B896E3CC4D9D1CCB={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="BackupServiceTests.swift";path="SolarCastTests/Integration/BackupServiceTests.swift";sourceTree="<group>";};
+		546BC08BB58FB64CA15D6E42={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="MockSolcastAPIClientTests.swift";path="SolarCastTests/Unit/MockSolcastAPIClientTests.swift";sourceTree="<group>";};
+		98753EFDBCF4AD03CABDAA19={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ErrorPresentation.swift";path="Core/Utilities/ErrorPresentation.swift";sourceTree="<group>";};
+		6C842B2C688E7CAA767B4130={isa=PBXFileReference;lastKnownFileType=sourcecode.swift;name="ActiveSitePolicy.swift";path="Domain/UseCases/ActiveSitePolicy.swift";sourceTree="<group>";};
+/* End PBXFileReference section */
+
+/* Begin PBXBuildFile section */
+		C9C2BEF7CEE6F332F8DFFFAE={isa=PBXBuildFile;productRef=18B7DC7F425B106DAD13B382;};
+		F40DBB2A0CF278CD117855BB={isa=PBXBuildFile;fileRef=58F02208A1E6A99468703A4E;};
+		11EA3702322071F2AA1AB16B={isa=PBXBuildFile;fileRef=010E11AB707243E6B7F88112;};
+		33EFDAF1C239D2185A36C565={isa=PBXBuildFile;fileRef=0367DC6E2253F3BB18DD316A;};
+		577CAE8D4A65D6364EA59C6E={isa=PBXBuildFile;fileRef=C43D78DA51FAC340199FF395;};
+		98C0FED462012DADB5D63706={isa=PBXBuildFile;fileRef=98CF1DF7ACBB1FD28B8131D6;};
+		7B26B3EBBD63FB301A6BF353={isa=PBXBuildFile;fileRef=615A1EC6F00886619BCCD06F;};
+		4A1353A04BC275DCB9E46ABD={isa=PBXBuildFile;fileRef=BAC7302835B0738111569CF7;};
+		48EE78885F20F881439DD06E={isa=PBXBuildFile;fileRef=04CFAF0DC2EBFD0142E6A5FF;};
+		CBB1E522DEFCA9B2B9BABB97={isa=PBXBuildFile;fileRef=763BCEBCE754E4E0FAADAC48;};
+		D274F961F243F257CFC195A1={isa=PBXBuildFile;fileRef=346B740B368149733DD7AC4E;};
+		23FB4BE952CCA07930FB1453={isa=PBXBuildFile;fileRef=207AB3E1CE1BE3129B2A4BC8;};
+		EEE06D53EB8CEC1F3A39FDD7={isa=PBXBuildFile;fileRef=EFA81779F10111EB90873921;};
+		2D43B5B135C4B3C447E23260={isa=PBXBuildFile;fileRef=DB9AF9184821D38A2B2768DC;};
+		FDC7CEF34E70FEEE93A0A5F4={isa=PBXBuildFile;fileRef=BFA683A883B990EE0DEF2983;};
+		1F22DCF1C530259D35B922C7={isa=PBXBuildFile;fileRef=4C313806CB2D0337E676A445;};
+		95E83AF701AFDF4E7FA126B3={isa=PBXBuildFile;fileRef=0643EF60CC461618E167D337;};
+		464A82F6CB9C6F9F01DA9205={isa=PBXBuildFile;fileRef=54860D38F151DD5AC28F0CC0;};
+		7E5678DA1A7EBF3498342C30={isa=PBXBuildFile;fileRef=BB813C7DA2B3E053065246FB;};
+		1998B299A74DA7DF24F8D725={isa=PBXBuildFile;fileRef=354AD3C930F8631C77E7A770;};
+		368DC2885C3851FA4A810C45={isa=PBXBuildFile;fileRef=790DA97C570A89E1C55018A1;};
+		67B836BB197BF3CF41F4CB40={isa=PBXBuildFile;fileRef=43340396F20D566870EBF6B3;};
+		CF7B71A15485E28750CA79F4={isa=PBXBuildFile;fileRef=57E5580A185923359259B204;};
+		41EB9507DB0EACA655ADEE56={isa=PBXBuildFile;fileRef=574B874675DB49EC0724DF46;};
+		F2D67D2F4D5AF92A46781BC7={isa=PBXBuildFile;fileRef=9216427D3DBD9AAB5A1AD864;};
+		B8C7A4F17B10755EEF63B311={isa=PBXBuildFile;fileRef=B5A76BB192F85CB7D14C6023;};
+		E804C76B0844AEE9C0A6C590={isa=PBXBuildFile;fileRef=46F2108A4E03A47037457A23;};
+		439319948E8B813DC9EB5B01={isa=PBXBuildFile;fileRef=75E6F3F26EA2A4EC485C4B3D;};
+		48019D1220E12653E5FDA140={isa=PBXBuildFile;fileRef=1B70A1C19163834ACD72F838;};
+		3DCC862C1392A2C0E4F6A5AC={isa=PBXBuildFile;fileRef=ADE54E39458A7DC94972DAA7;};
+		37DEB1C97ED8533015312A04={isa=PBXBuildFile;fileRef=D829A4E35FBD292CB7A15825;};
+		172F5E6820E0430EB79EA4EB={isa=PBXBuildFile;fileRef=63D6370E280EA46BDF4D89CC;};
+		D8632175607DEEAA7E193D9D={isa=PBXBuildFile;fileRef=5E73BC50BCCC0B4D2B861252;};
+		45D70C077BA440684D164257={isa=PBXBuildFile;fileRef=1B5E78B97A86072E9130B38A;};
+		CF0EA84C7EC5728E8A19F3D0={isa=PBXBuildFile;fileRef=8CE86CCCBD1E351C742B4EAF;};
+		14251305CC2EE0BC2899D74A={isa=PBXBuildFile;fileRef=F4E39FD1B3766B8F846A9978;};
+		A1F469A9A0ED7D4742EC59AF={isa=PBXBuildFile;fileRef=590A453F7937C899546A816B;};
+		D74356F7B452267F7714C9D4={isa=PBXBuildFile;fileRef=3CDFC19CB5F4D63EE6BD9ECF;};
+		C1239E1608724ADEEEABC88D={isa=PBXBuildFile;fileRef=0692B0608549AED2F8599014;};
+		A0AB04C2F2C8BE2DAECD69E1={isa=PBXBuildFile;fileRef=9B9DC8D4AA5C6BE4DD4FAE66;};
+		3FC3710C52BBB141EA3550DC={isa=PBXBuildFile;fileRef=E4838B17BB381164CCC38B26;};
+		8E6297E6A11F14618489EB4E={isa=PBXBuildFile;fileRef=376A9191E51276E9F80A52B9;};
+		5DC068C7D5D83B8D351E19BE={isa=PBXBuildFile;fileRef=DF9B7B9C1DC1CE24056E7F86;};
+		B0F733F76F5627F6FB6CF766={isa=PBXBuildFile;fileRef=71CBF0C19E2379CF12F0A162;};
+		3BBC22D3A9F3223F43B775A2={isa=PBXBuildFile;fileRef=4140D3C25421B63DE3F66F4D;};
+		2C9721ECAEE37BFD50A57349={isa=PBXBuildFile;fileRef=F12B170685F323CEFAADA75A;};
+		EEE5AD89E6D5CACAAC604A58={isa=PBXBuildFile;fileRef=A751C11708C2D7ADC353A632;};
+		38D63EF91A1ADA0B79DA10FC={isa=PBXBuildFile;fileRef=74D076407632987A0A765D80;};
+		26126FD5D214873BED78D2CD={isa=PBXBuildFile;fileRef=A72F4777AE745E6A70DF9830;};
+		35653277AB31E53332B0BC14={isa=PBXBuildFile;fileRef=97E03D0A015E43DC1F26B957;};
+		9F1DFB6ED25209291232EBAB={isa=PBXBuildFile;fileRef=6392C4FD7D1FA2C912B98030;};
+		299A83B3F3F3793972A45CBF={isa=PBXBuildFile;fileRef=C90169BAD28BDD73AB732B56;};
+		4BAFE73DCFA41BDF72FB12A7={isa=PBXBuildFile;fileRef=A7DBA3400DD2B4F097006EC4;};
+		12D355D2FD6221D3C348359A={isa=PBXBuildFile;fileRef=37948E4A5020A27EA34C7F26;};
+		81D3EFAC65EC324C77CD0A32={isa=PBXBuildFile;fileRef=9F65F94B42A94CD59FBCC278;};
+		5663E160EE096903FDB87F98={isa=PBXBuildFile;fileRef=43AED3F2EB5B2045935C4C24;};
+		28CB1F795E49C4C18EC6C234={isa=PBXBuildFile;fileRef=F86F540A3B46DE74605E12DE;};
+		8CF1989101DAEAEAC6A6DD14={isa=PBXBuildFile;fileRef=369E12E5265BAA1F6180EDD9;};
+		E6E388794098D3FD55B758F6={isa=PBXBuildFile;fileRef=C0F2FC161CBABC0F6A6D6DA7;};
+		4BBCEDE6DEC8DBFFFD5767A7={isa=PBXBuildFile;fileRef=87B08276E7D3462BC65A1BA9;};
+		8EB8E721AF13AA597E5194F7={isa=PBXBuildFile;fileRef=E0DA4C3236643BE9E8D443D5;};
+		E7FCBE6BF318AB00C3F7F805={isa=PBXBuildFile;fileRef=42FCE8894F7D336A620B7067;};
+		854F7A97F148AF777C813BFF={isa=PBXBuildFile;fileRef=87F912088CFDF6998B4A88FA;};
+		D0963668DBAC1CD729555975={isa=PBXBuildFile;fileRef=B5FE8260C8FBCEC9AC6E718B;};
+		3F74B817D21FD965F21FDF5A={isa=PBXBuildFile;fileRef=C1A77A830022091D17DB74D8;};
+		D185528EB160860973245E01={isa=PBXBuildFile;fileRef=5939AB7C95ABA68ED020AFAA;};
+		69BC48C18F63F3C034FAB2E9={isa=PBXBuildFile;fileRef=72E4BC461FD21AF1AD7A1CA0;};
+		D3965C9027CA56BA89EC0BC7={isa=PBXBuildFile;fileRef=6BA73CB6A8969885C0CC7E5E;};
+		5710C2E2B878BE81E3512855={isa=PBXBuildFile;fileRef=0EBB939F09C5A302CBA181BA;};
+		45CC63B89786AA566B22CF76={isa=PBXBuildFile;fileRef=F75B8EE9F6BCB6AECA4CBC74;};
+		A967AFEB06F0370D8673BF5E={isa=PBXBuildFile;fileRef=239E6C60738015CBD1CA26A2;};
+		A9D67A3540A87809B77A75A8={isa=PBXBuildFile;fileRef=1190EBE68B6704210138E8E6;};
+		524C77B9EE3EB31DD9F077D2={isa=PBXBuildFile;fileRef=FD687BBB5A9E21CBF7AB912E;};
+		EF311C2A022BCEDBE9CF67A0={isa=PBXBuildFile;fileRef=A121126AFB75F1A6A4C066E1;};
+		2C9B60F0A5EF20F775D22040={isa=PBXBuildFile;fileRef=FDE7FA0DCD81AED6A2CC7D07;};
+		9B86819411979E24B51360A1={isa=PBXBuildFile;fileRef=EDF8FC622D1A59154BDD0787;};
+		C937E87E614CEA68B124C910={isa=PBXBuildFile;fileRef=87A77F42327036765D6E5182;};
+		37572FD551B22B9C2D628FBA={isa=PBXBuildFile;fileRef=D345CCD8860905A38BDDCFE8;};
+		80D8686C1F92B4D8D997972C={isa=PBXBuildFile;fileRef=DA9BF4966F1D31710DFB5593;};
+		0204E7C0AF3AD739DB23105D={isa=PBXBuildFile;fileRef=D126992433C84AF5022450E7;};
+		67B30A163B6C3CA3410B6CC8={isa=PBXBuildFile;fileRef=6B7E2CD04D80174384C20B52;};
+		08B54EB39C70512B23A3A142={isa=PBXBuildFile;fileRef=0F4655E7ECC4EECEC38A9CA6;};
+		1F25F0B2F665CF307C2E3EC2={isa=PBXBuildFile;fileRef=EC2B448D350FE10CED0EEDB8;};
+		344F8DAC22EC187DB2EA6D82={isa=PBXBuildFile;fileRef=1DAF7B461675A004DEF56DA5;};
+		285EC1B4578F97A40692EDC3={isa=PBXBuildFile;fileRef=EFE43B54D42BD4077980AAFC;};
+		44C46597A40D48A4DC7E3082={isa=PBXBuildFile;fileRef=AE45B09AFE3314E4395AC832;};
+		4CD7AACB8A67584BE8E4CA76={isa=PBXBuildFile;fileRef=2883E2303EA98CDD018E38EF;};
+		12C71EA29FD1B3B1D1ABE91E={isa=PBXBuildFile;fileRef=EDC98B060F77D75DE5DFB4DE;};
+		D445FFDC42A63EDFD18D48BC={isa=PBXBuildFile;fileRef=CC70D16A302C4A4CD625EC26;};
+		3757F86D80327E00715ADF9C={isa=PBXBuildFile;fileRef=ADCE915228468940650FFA17;};
+		35797C73023819A18D6D117E={isa=PBXBuildFile;fileRef=C0DB7E74309AF2407BEB9302;};
+		309350A67AF6F5BFCDD3C6EB={isa=PBXBuildFile;fileRef=A0BE9788A9C389D1E1F06BC4;};
+		A599DB23205A73B660014EDB={isa=PBXBuildFile;fileRef=CC41FA08B411B190CC9F5EDE;};
+		8220449F9E9B5FEBDE18A07D={isa=PBXBuildFile;fileRef=7DFF855E6029F7D142948948;};
+		7D0B1FB61842B61532576113={isa=PBXBuildFile;fileRef=C34F6D57A28BF0C6172C3EB7;};
+		2F8661060DA2A8A4A449354C={isa=PBXBuildFile;fileRef=6FB4CE642BB26B5A9C8AA859;};
+		E24B3CB9E94A11E98FA72452={isa=PBXBuildFile;fileRef=D976C57F6CC8002971794BCF;};
+		DE0277C0540079FE44BA7DF2={isa=PBXBuildFile;fileRef=4B92061B231AF9B59BECEDE3;};
+		0A4FC64E8B9D06CEC9A5432D={isa=PBXBuildFile;fileRef=85E774FCA4D15819B0620E79;};
+		036E1A650872F9C3B46A4697={isa=PBXBuildFile;fileRef=11755EF3C2290F7F1EEA4F69;};
+		952EB19228B392264DDC01E7={isa=PBXBuildFile;fileRef=CAB38BA738E70BDFD68F8511;};
+		957C461C466BD49A54554A9C={isa=PBXBuildFile;fileRef=F4632F9A688185D0B39488D1;};
+		F79EF44E042F4405ECA24B7C={isa=PBXBuildFile;fileRef=7AD461034B11178F80F7F060;};
+		C2927B0CEA66C4CC24BFCF1C={isa=PBXBuildFile;fileRef=4FC46D81F53567EB46F03933;};
+		DAE7A0CB81B1D477BC129D4D={isa=PBXBuildFile;fileRef=ED5DBC3ABBECB6EE0A01AB48;};
+		1646FDAE7BDB5F2907071A07={isa=PBXBuildFile;fileRef=335C81D14EE1CB60149899CE;};
+		CA18D5B157FC2DC13B5AC790={isa=PBXBuildFile;fileRef=FC553CF7D6B1811CF5AC10BC;};
+		04F339F27674BB656B95CD18={isa=PBXBuildFile;fileRef=DE282E840BC828AD8EA6C42B;};
+		5A14846A00C4B320777B3EE3={isa=PBXBuildFile;fileRef=531490A3DB1149B7EAEFDB6E;};
+		DC2D81E9A504A48B190BDA85={isa=PBXBuildFile;fileRef=DB61B0EEA40E0CAE04B5DFF2;};
+		B103BD91054B395A86DEEA86={isa=PBXBuildFile;fileRef=66346A756BC9DF0351DED7BC;};
+		6021AF190E4AD1D78A9D373B={isa=PBXBuildFile;fileRef=830AD0292FD1000AB8BC1F7B;};
+		5A74C627D02915E5B433C493={isa=PBXBuildFile;fileRef=CCA8F825E3CA8434DA5BC7E6;};
+		17775ECB047EAF2AB59D6FFD={isa=PBXBuildFile;fileRef=5EA07C88FE8CCFE6591B4D85;};
+		D3D4AF10833DFE196CF57E71={isa=PBXBuildFile;fileRef=2BE92E37E671A047791802FD;};
+		EF14B569951D0AD70EA80C8D={isa=PBXBuildFile;fileRef=013A89C7AE66A25F95D7523F;};
+		DA56523F858F8BDCE6791BD7={isa=PBXBuildFile;fileRef=28E2230C055D304B710739CD;};
+		92EC5A3E73E1C32E0DE177B6={isa=PBXBuildFile;fileRef=1464F9D0E1536DAFB7F3567F;};
+		EBC2ADD1472CD433F85FF897={isa=PBXBuildFile;fileRef=D28D36F0A7D1CAC52096FAAD;};
+		31D865523E8CC227E26CFA94={isa=PBXBuildFile;fileRef=4076E4F62B15BA358E154C05;};
+		AFB59C30FC3668ECE4F4B798={isa=PBXBuildFile;fileRef=92F954FCC8F702C83860D174;};
+		46D4366F80C989AB8443A814={isa=PBXBuildFile;fileRef=5B060EEB494321C563DF9D67;};
+		C994EE6926311ECED342BA31={isa=PBXBuildFile;fileRef=0BF9C0F2C876E1FC79A6E15A;};
+		32B53530EE3E91A0F82A2DAE={isa=PBXBuildFile;fileRef=C96A053F6F72C207FED9F661;};
+		E787E693282BB1706DE92EA5={isa=PBXBuildFile;fileRef=D74E8C3EC47C0C4CD7D1E009;};
+		F5710170C60627009A0D06C5={isa=PBXBuildFile;fileRef=B0799FCBF6B89DC88B1BA1E7;};
+		65960000CCC50B22EC858CE1={isa=PBXBuildFile;fileRef=AAAD820A6FFF21FEE147FF37;};
+		E8EF787D7718046CA27FD78A={isa=PBXBuildFile;fileRef=603FFCC4B896E3CC4D9D1CCB;};
+		6297DD190EA9C9682D4F48AB={isa=PBXBuildFile;fileRef=546BC08BB58FB64CA15D6E42;};
+		F46CAC6ED9175EB51F381526={isa=PBXBuildFile;fileRef=98753EFDBCF4AD03CABDAA19;};
+		43D89E1CA2E62E5A0D732031={isa=PBXBuildFile;fileRef=6C842B2C688E7CAA767B4130;};
+/* End PBXBuildFile section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5571E31C23B01F3C919111A8={isa=PBXSourcesBuildPhase;buildActionMask=2147483647;files=(
+
+				43D89E1CA2E62E5A0D732031,
+
+				F46CAC6ED9175EB51F381526,
+
+
+
+				C994EE6926311ECED342BA31,
+				32B53530EE3E91A0F82A2DAE,
+				E787E693282BB1706DE92EA5,
+
+				11EA3702322071F2AA1AB16B,
+				33EFDAF1C239D2185A36C565,
+				577CAE8D4A65D6364EA59C6E,
+				98C0FED462012DADB5D63706,
+				7B26B3EBBD63FB301A6BF353,
+				4A1353A04BC275DCB9E46ABD,
+				48EE78885F20F881439DD06E,
+				CBB1E522DEFCA9B2B9BABB97,
+				D274F961F243F257CFC195A1,
+				23FB4BE952CCA07930FB1453,
+				EEE06D53EB8CEC1F3A39FDD7,
+				2D43B5B135C4B3C447E23260,
+				FDC7CEF34E70FEEE93A0A5F4,
+				1F22DCF1C530259D35B922C7,
+				95E83AF701AFDF4E7FA126B3,
+				464A82F6CB9C6F9F01DA9205,
+				7E5678DA1A7EBF3498342C30,
+				1998B299A74DA7DF24F8D725,
+				368DC2885C3851FA4A810C45,
+				67B836BB197BF3CF41F4CB40,
+				CF7B71A15485E28750CA79F4,
+				41EB9507DB0EACA655ADEE56,
+				F2D67D2F4D5AF92A46781BC7,
+				B8C7A4F17B10755EEF63B311,
+				E804C76B0844AEE9C0A6C590,
+				439319948E8B813DC9EB5B01,
+				48019D1220E12653E5FDA140,
+				3DCC862C1392A2C0E4F6A5AC,
+				37DEB1C97ED8533015312A04,
+				172F5E6820E0430EB79EA4EB,
+				D8632175607DEEAA7E193D9D,
+				45D70C077BA440684D164257,
+				CF0EA84C7EC5728E8A19F3D0,
+				14251305CC2EE0BC2899D74A,
+				A1F469A9A0ED7D4742EC59AF,
+				D74356F7B452267F7714C9D4,
+				C1239E1608724ADEEEABC88D,
+				A0AB04C2F2C8BE2DAECD69E1,
+				3FC3710C52BBB141EA3550DC,
+				8E6297E6A11F14618489EB4E,
+				5DC068C7D5D83B8D351E19BE,
+				B0F733F76F5627F6FB6CF766,
+				3BBC22D3A9F3223F43B775A2,
+				2C9721ECAEE37BFD50A57349,
+				EEE5AD89E6D5CACAAC604A58,
+				38D63EF91A1ADA0B79DA10FC,
+				26126FD5D214873BED78D2CD,
+				35653277AB31E53332B0BC14,
+				9F1DFB6ED25209291232EBAB,
+				299A83B3F3F3793972A45CBF,
+				4BAFE73DCFA41BDF72FB12A7,
+				12D355D2FD6221D3C348359A,
+				81D3EFAC65EC324C77CD0A32,
+				5663E160EE096903FDB87F98,
+				28CB1F795E49C4C18EC6C234,
+				8CF1989101DAEAEAC6A6DD14,
+				E6E388794098D3FD55B758F6,
+				4BBCEDE6DEC8DBFFFD5767A7,
+				8EB8E721AF13AA597E5194F7,
+				E7FCBE6BF318AB00C3F7F805,
+				854F7A97F148AF777C813BFF,
+				D0963668DBAC1CD729555975,
+				3F74B817D21FD965F21FDF5A,
+				D185528EB160860973245E01,
+				69BC48C18F63F3C034FAB2E9,
+				D3965C9027CA56BA89EC0BC7,
+				5710C2E2B878BE81E3512855,
+				45CC63B89786AA566B22CF76,
+				A967AFEB06F0370D8673BF5E,
+				A9D67A3540A87809B77A75A8,
+				524C77B9EE3EB31DD9F077D2,
+				EF311C2A022BCEDBE9CF67A0,
+				2C9B60F0A5EF20F775D22040,
+				9B86819411979E24B51360A1,
+				C937E87E614CEA68B124C910,
+				37572FD551B22B9C2D628FBA,
+				80D8686C1F92B4D8D997972C,
+				0204E7C0AF3AD739DB23105D,
+				67B30A163B6C3CA3410B6CC8,
+				08B54EB39C70512B23A3A142,
+				1F25F0B2F665CF307C2E3EC2,
+				344F8DAC22EC187DB2EA6D82,
+				285EC1B4578F97A40692EDC3,
+				44C46597A40D48A4DC7E3082,
+				4CD7AACB8A67584BE8E4CA76,
+				12C71EA29FD1B3B1D1ABE91E,
+				D445FFDC42A63EDFD18D48BC,
+				3757F86D80327E00715ADF9C,
+				35797C73023819A18D6D117E,
+				309350A67AF6F5BFCDD3C6EB,
+				A599DB23205A73B660014EDB,
+				8220449F9E9B5FEBDE18A07D,
+				7D0B1FB61842B61532576113,
+				2F8661060DA2A8A4A449354C,
+				E24B3CB9E94A11E98FA72452,
+				DE0277C0540079FE44BA7DF2,
+				0A4FC64E8B9D06CEC9A5432D,
+				036E1A650872F9C3B46A4697,
+				952EB19228B392264DDC01E7,
+				957C461C466BD49A54554A9C,
+				F79EF44E042F4405ECA24B7C,
+			);runOnlyForDeploymentPostprocessing=0;};
+		EC54E2496ADE6CEF5D22FB67={isa=PBXSourcesBuildPhase;buildActionMask=2147483647;files=(
+				6297DD190EA9C9682D4F48AB,
+
+				E8EF787D7718046CA27FD78A,
+
+				65960000CCC50B22EC858CE1,
+
+				F5710170C60627009A0D06C5,
+
+				C2927B0CEA66C4CC24BFCF1C,
+				DAE7A0CB81B1D477BC129D4D,
+				1646FDAE7BDB5F2907071A07,
+				CA18D5B157FC2DC13B5AC790,
+				04F339F27674BB656B95CD18,
+				5A14846A00C4B320777B3EE3,
+				DC2D81E9A504A48B190BDA85,
+				B103BD91054B395A86DEEA86,
+				6021AF190E4AD1D78A9D373B,
+				5A74C627D02915E5B433C493,
+				17775ECB047EAF2AB59D6FFD,
+				D3D4AF10833DFE196CF57E71,
+				EF14B569951D0AD70EA80C8D,
+				DA56523F858F8BDCE6791BD7,
+				92EC5A3E73E1C32E0DE177B6,
+				EBC2ADD1472CD433F85FF897,
+				31D865523E8CC227E26CFA94,
+				AFB59C30FC3668ECE4F4B798,
+				46D4366F80C989AB8443A814,
+			);runOnlyForDeploymentPostprocessing=0;};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2A577D0F252DCE617AD7D6B={isa=PBXFrameworksBuildPhase;buildActionMask=2147483647;files=(C9C2BEF7CEE6F332F8DFFFAE,);runOnlyForDeploymentPostprocessing=0;};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		23480C3245676D8308AF8592={isa=PBXResourcesBuildPhase;buildActionMask=2147483647;files=(F40DBB2A0CF278CD117855BB,);runOnlyForDeploymentPostprocessing=0;};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXGroup section */
+		E0C1FCE8599CFD8B29DA77CF={isa=PBXGroup;children=(AE36C5BFC61B65BC64E1EFD4,1FBA5ABDACC3E06E44EE5D3C,8CEFFD9DE9DCFFBC025B9DED,5BEF47AA344ACDFFD78FCD1E,FF8983E4EAB9ABA92FF45796,558426E31B7D0A6F3F94FFDC,6ADDF44D20B693906789E6A5,50CF74D469E6088F9EB7D00E,);sourceTree="<group>";};
+		50CF74D469E6088F9EB7D00E={isa=PBXGroup;children=(27AB7A5473181677E9D497D3,73E1FECCA85163111742D6FE,);name=Products;sourceTree="<group>";};
+		6ADDF44D20B693906789E6A5={isa=PBXGroup;children=(5DE24A0370BF41BA5A41E4BE,58F02208A1E6A99468703A4E,);name=Resources;sourceTree="<group>";};
+		1FBA5ABDACC3E06E44EE5D3C={isa=PBXGroup;children=(
+				010E11AB707243E6B7F88112,
+				0367DC6E2253F3BB18DD316A,
+				C43D78DA51FAC340199FF395,
+				98CF1DF7ACBB1FD28B8131D6,
+			);name="App";sourceTree="<group>";};
+		8CEFFD9DE9DCFFBC025B9DED={isa=PBXGroup;children=(6C842B2C688E7CAA767B4130,
+				615A1EC6F00886619BCCD06F,
+				BAC7302835B0738111569CF7,
+				04CFAF0DC2EBFD0142E6A5FF,
+				763BCEBCE754E4E0FAADAC48,
+				346B740B368149733DD7AC4E,
+				207AB3E1CE1BE3129B2A4BC8,
+				EFA81779F10111EB90873921,
+				DB9AF9184821D38A2B2768DC,
+				BFA683A883B990EE0DEF2983,
+				4C313806CB2D0337E676A445,
+				0643EF60CC461618E167D337,
+				54860D38F151DD5AC28F0CC0,
+				BB813C7DA2B3E053065246FB,
+				354AD3C930F8631C77E7A770,
+				790DA97C570A89E1C55018A1,
+				43340396F20D566870EBF6B3,
+				57E5580A185923359259B204,
+				574B874675DB49EC0724DF46,
+			);name="Domain";sourceTree="<group>";};
+		5BEF47AA344ACDFFD78FCD1E={isa=PBXGroup;children=(98753EFDBCF4AD03CABDAA19,0BF9C0F2C876E1FC79A6E15A,C96A053F6F72C207FED9F661,D74E8C3EC47C0C4CD7D1E009,
+				9216427D3DBD9AAB5A1AD864,
+				B5A76BB192F85CB7D14C6023,
+				46F2108A4E03A47037457A23,
+				75E6F3F26EA2A4EC485C4B3D,
+				1B70A1C19163834ACD72F838,
+				ADE54E39458A7DC94972DAA7,
+				D829A4E35FBD292CB7A15825,
+				63D6370E280EA46BDF4D89CC,
+				5E73BC50BCCC0B4D2B861252,
+				1B5E78B97A86072E9130B38A,
+				8CE86CCCBD1E351C742B4EAF,
+				F4E39FD1B3766B8F846A9978,
+				590A453F7937C899546A816B,
+				3CDFC19CB5F4D63EE6BD9ECF,
+				0692B0608549AED2F8599014,
+				9B9DC8D4AA5C6BE4DD4FAE66,
+				E4838B17BB381164CCC38B26,
+				376A9191E51276E9F80A52B9,
+				DF9B7B9C1DC1CE24056E7F86,
+				71CBF0C19E2379CF12F0A162,
+				4140D3C25421B63DE3F66F4D,
+				F12B170685F323CEFAADA75A,
+				A751C11708C2D7ADC353A632,
+				74D076407632987A0A765D80,
+				A72F4777AE745E6A70DF9830,
+				97E03D0A015E43DC1F26B957,
+				6392C4FD7D1FA2C912B98030,
+				C90169BAD28BDD73AB732B56,
+				A7DBA3400DD2B4F097006EC4,
+				37948E4A5020A27EA34C7F26,
+				9F65F94B42A94CD59FBCC278,
+				43AED3F2EB5B2045935C4C24,
+				F86F540A3B46DE74605E12DE,
+				369E12E5265BAA1F6180EDD9,
+				C0F2FC161CBABC0F6A6D6DA7,
+				87B08276E7D3462BC65A1BA9,
+				E0DA4C3236643BE9E8D443D5,
+				42FCE8894F7D336A620B7067,
+				87F912088CFDF6998B4A88FA,
+				B5FE8260C8FBCEC9AC6E718B,
+				C1A77A830022091D17DB74D8,
+				5939AB7C95ABA68ED020AFAA,
+				72E4BC461FD21AF1AD7A1CA0,
+								6BA73CB6A8969885C0CC7E5E,
+				0EBB939F09C5A302CBA181BA,
+				F75B8EE9F6BCB6AECA4CBC74,
+							);name="Core";sourceTree="<group>";};
+		FF8983E4EAB9ABA92FF45796={isa=PBXGroup;children=(
+				239E6C60738015CBD1CA26A2,
+				1190EBE68B6704210138E8E6,
+				FD687BBB5A9E21CBF7AB912E,
+				A121126AFB75F1A6A4C066E1,
+				
+				FDE7FA0DCD81AED6A2CC7D07,
+				EDF8FC622D1A59154BDD0787,
+				87A77F42327036765D6E5182,
+				D345CCD8860905A38BDDCFE8,
+				DA9BF4966F1D31710DFB5593,
+				D126992433C84AF5022450E7,
+				6B7E2CD04D80174384C20B52,
+				0F4655E7ECC4EECEC38A9CA6,
+				EC2B448D350FE10CED0EEDB8,
+				1DAF7B461675A004DEF56DA5,
+				EFE43B54D42BD4077980AAFC,
+				
+				AE45B09AFE3314E4395AC832,
+				2883E2303EA98CDD018E38EF,
+				EDC98B060F77D75DE5DFB4DE,
+				CC70D16A302C4A4CD625EC26,
+				ADCE915228468940650FFA17,
+				C0DB7E74309AF2407BEB9302,
+				A0BE9788A9C389D1E1F06BC4,
+				CC41FA08B411B190CC9F5EDE,
+				7DFF855E6029F7D142948948,
+				C34F6D57A28BF0C6172C3EB7,
+				6FB4CE642BB26B5A9C8AA859,
+				D976C57F6CC8002971794BCF,
+				
+				4B92061B231AF9B59BECEDE3,
+				85E774FCA4D15819B0620E79,
+				11755EF3C2290F7F1EEA4F69,
+				CAB38BA738E70BDFD68F8511,
+				F4632F9A688185D0B39488D1,
+				7AD461034B11178F80F7F060,
+			);name="Features";sourceTree="<group>";};
+		558426E31B7D0A6F3F94FFDC={isa=PBXGroup;children=(546BC08BB58FB64CA15D6E42,603FFCC4B896E3CC4D9D1CCB,AAAD820A6FFF21FEE147FF37,B0799FCBF6B89DC88B1BA1E7,
+				4FC46D81F53567EB46F03933,
+				ED5DBC3ABBECB6EE0A01AB48,
+				335C81D14EE1CB60149899CE,
+				FC553CF7D6B1811CF5AC10BC,
+				DE282E840BC828AD8EA6C42B,
+				531490A3DB1149B7EAEFDB6E,
+				DB61B0EEA40E0CAE04B5DFF2,
+				66346A756BC9DF0351DED7BC,
+				830AD0292FD1000AB8BC1F7B,
+				CCA8F825E3CA8434DA5BC7E6,
+				5EA07C88FE8CCFE6591B4D85,
+				2BE92E37E671A047791802FD,
+				013A89C7AE66A25F95D7523F,
+				28E2230C055D304B710739CD,
+				1464F9D0E1536DAFB7F3567F,
+				D28D36F0A7D1CAC52096FAAD,
+				4076E4F62B15BA358E154C05,
+				92F954FCC8F702C83860D174,
+				5B060EEB494321C563DF9D67,
+			);name="SolarCastTests";sourceTree="<group>";};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		79AC9B7AD6F717317C65702B={isa=PBXNativeTarget;buildConfigurationList=CE605FB886C05338BCB3D533;buildPhases=(5571E31C23B01F3C919111A8,D2A577D0F252DCE617AD7D6B,23480C3245676D8308AF8592,);buildRules=();dependencies=();name=SolarCast;packageProductDependencies=(18B7DC7F425B106DAD13B382,);productName=SolarCast;productReference=27AB7A5473181677E9D497D3;productType="com.apple.product-type.application";};
+		1DF0A024E05490418A7AE1EE={isa=PBXNativeTarget;buildConfigurationList=96484D38E310E39ECFA7B0FB;buildPhases=(EC54E2496ADE6CEF5D22FB67,);buildRules=();dependencies=();name=SolarCastTests;productName=SolarCastTests;productReference=73E1FECCA85163111742D6FE;productType="com.apple.product-type.bundle.unit-test";};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4DC844ABCCFC0D132D087C1C={isa=PBXProject;attributes={LastUpgradeCheck=1500;TargetAttributes={79AC9B7AD6F717317C65702B={CreatedOnToolsVersion=15.0;};1DF0A024E05490418A7AE1EE={CreatedOnToolsVersion=15.0;TestTargetID=79AC9B7AD6F717317C65702B;};};};buildConfigurationList=E9898A0EB58D6691901DFE9F;compatibilityVersion="Xcode 14.0";developmentRegion=en;hasScannedForEncodings=0;knownRegions=(en,Base,);mainGroup=E0C1FCE8599CFD8B29DA77CF;packageReferences=(E715737DA6FC0B2071D0D025,);productRefGroup=50CF74D469E6088F9EB7D00E;projectDirPath="";projectRoot="";targets=(79AC9B7AD6F717317C65702B,1DF0A024E05490418A7AE1EE,);};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		889F1FAE4F6FAFB1172745EE={isa=XCBuildConfiguration;buildSettings={ALWAYS_SEARCH_USER_PATHS=NO;ASSETCATALOG_COMPILER_APPICON_NAME=AppIcon;ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS=YES;CLANG_ENABLE_MODULES=YES;CODE_SIGN_STYLE=Automatic;CURRENT_PROJECT_VERSION=1;ENABLE_PREVIEWS=YES;INFOPLIST_FILE="Resources/Info.plist";IPHONEOS_DEPLOYMENT_TARGET=17.0;MARKETING_VERSION=1.0;PRODUCT_BUNDLE_IDENTIFIER="com.ioanmihaila.solarcast";PRODUCT_NAME="$(TARGET_NAME)";SDKROOT=iphoneos;SUPPORTED_PLATFORMS="iphoneos iphonesimulator";SWIFT_EMIT_LOC_STRINGS=YES;SWIFT_VERSION=5.0;TARGETED_DEVICE_FAMILY=1; DEBUG_INFORMATION_FORMAT=dwarf;ENABLE_TESTABILITY=YES;GCC_OPTIMIZATION_LEVEL=0;ONLY_ACTIVE_ARCH=YES;SWIFT_ACTIVE_COMPILATION_CONDITIONS=DEBUG;SWIFT_OPTIMIZATION_LEVEL="-Onone";}; baseConfigurationReference=AE36C5BFC61B65BC64E1EFD4;name=Debug;};
+		C5833D2EA874210DF0E21531={isa=XCBuildConfiguration;buildSettings={ALWAYS_SEARCH_USER_PATHS=NO;ASSETCATALOG_COMPILER_APPICON_NAME=AppIcon;ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS=YES;CLANG_ENABLE_MODULES=YES;CODE_SIGN_STYLE=Automatic;CURRENT_PROJECT_VERSION=1;ENABLE_PREVIEWS=YES;INFOPLIST_FILE="Resources/Info.plist";IPHONEOS_DEPLOYMENT_TARGET=17.0;MARKETING_VERSION=1.0;PRODUCT_BUNDLE_IDENTIFIER="com.ioanmihaila.solarcast";PRODUCT_NAME="$(TARGET_NAME)";SDKROOT=iphoneos;SUPPORTED_PLATFORMS="iphoneos iphonesimulator";SWIFT_EMIT_LOC_STRINGS=YES;SWIFT_VERSION=5.0;TARGETED_DEVICE_FAMILY=1; DEBUG_INFORMATION_FORMAT="dwarf-with-dsym";ENABLE_NS_ASSERTIONS=NO;};name=Release;};
+		A1361DA182130910B8F60860={isa=XCBuildConfiguration;buildSettings={ALWAYS_SEARCH_USER_PATHS=NO;ASSETCATALOG_COMPILER_APPICON_NAME=AppIcon;ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS=YES;CLANG_ENABLE_MODULES=YES;CODE_SIGN_STYLE=Automatic;CURRENT_PROJECT_VERSION=1;ENABLE_PREVIEWS=YES;INFOPLIST_FILE="Resources/Info.plist";IPHONEOS_DEPLOYMENT_TARGET=17.0;MARKETING_VERSION=1.0;PRODUCT_BUNDLE_IDENTIFIER="com.ioanmihaila.solarcast";PRODUCT_NAME="$(TARGET_NAME)";SDKROOT=iphoneos;SUPPORTED_PLATFORMS="iphoneos iphonesimulator";SWIFT_EMIT_LOC_STRINGS=YES;SWIFT_VERSION=5.0;TARGETED_DEVICE_FAMILY=1; DEBUG_INFORMATION_FORMAT=dwarf;ENABLE_TESTABILITY=YES;GCC_OPTIMIZATION_LEVEL=0;ONLY_ACTIVE_ARCH=YES;SWIFT_ACTIVE_COMPILATION_CONDITIONS=DEBUG;SWIFT_OPTIMIZATION_LEVEL="-Onone";}; baseConfigurationReference=AE36C5BFC61B65BC64E1EFD4;name=Debug;};
+		4217FC1E248F2D2A5D8B5B6E={isa=XCBuildConfiguration;buildSettings={ALWAYS_SEARCH_USER_PATHS=NO;ASSETCATALOG_COMPILER_APPICON_NAME=AppIcon;ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS=YES;CLANG_ENABLE_MODULES=YES;CODE_SIGN_STYLE=Automatic;CURRENT_PROJECT_VERSION=1;ENABLE_PREVIEWS=YES;INFOPLIST_FILE="Resources/Info.plist";IPHONEOS_DEPLOYMENT_TARGET=17.0;MARKETING_VERSION=1.0;PRODUCT_BUNDLE_IDENTIFIER="com.ioanmihaila.solarcast";PRODUCT_NAME="$(TARGET_NAME)";SDKROOT=iphoneos;SUPPORTED_PLATFORMS="iphoneos iphonesimulator";SWIFT_EMIT_LOC_STRINGS=YES;SWIFT_VERSION=5.0;TARGETED_DEVICE_FAMILY=1; DEBUG_INFORMATION_FORMAT="dwarf-with-dsym";ENABLE_NS_ASSERTIONS=NO;};name=Release;};
+		3FBB2C8DFBB470B25A46F5E4={isa=XCBuildConfiguration;buildSettings={ALWAYS_SEARCH_USER_PATHS=NO;ASSETCATALOG_COMPILER_APPICON_NAME=AppIcon;ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS=YES;CLANG_ENABLE_MODULES=YES;CODE_SIGN_STYLE=Automatic;CURRENT_PROJECT_VERSION=1;ENABLE_PREVIEWS=YES;INFOPLIST_FILE="Resources/Info.plist";IPHONEOS_DEPLOYMENT_TARGET=17.0;MARKETING_VERSION=1.0;PRODUCT_BUNDLE_IDENTIFIER="com.ioanmihaila.solarcast";PRODUCT_NAME="$(TARGET_NAME)";SDKROOT=iphoneos;SUPPORTED_PLATFORMS="iphoneos iphonesimulator";SWIFT_EMIT_LOC_STRINGS=YES;SWIFT_VERSION=5.0;TARGETED_DEVICE_FAMILY=1; DEBUG_INFORMATION_FORMAT=dwarf;ENABLE_TESTABILITY=YES;GCC_OPTIMIZATION_LEVEL=0;ONLY_ACTIVE_ARCH=YES;SWIFT_ACTIVE_COMPILATION_CONDITIONS=DEBUG;SWIFT_OPTIMIZATION_LEVEL="-Onone"; BUNDLE_LOADER="$(BUILT_PRODUCTS_DIR)/SolarCast.app/SolarCast";TEST_HOST="$(BUNDLE_LOADER)";}; baseConfigurationReference=AE36C5BFC61B65BC64E1EFD4;name=Debug;};
+		38158BAB21F20ADE7FA60885={isa=XCBuildConfiguration;buildSettings={ALWAYS_SEARCH_USER_PATHS=NO;ASSETCATALOG_COMPILER_APPICON_NAME=AppIcon;ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS=YES;CLANG_ENABLE_MODULES=YES;CODE_SIGN_STYLE=Automatic;CURRENT_PROJECT_VERSION=1;ENABLE_PREVIEWS=YES;INFOPLIST_FILE="Resources/Info.plist";IPHONEOS_DEPLOYMENT_TARGET=17.0;MARKETING_VERSION=1.0;PRODUCT_BUNDLE_IDENTIFIER="com.ioanmihaila.solarcast";PRODUCT_NAME="$(TARGET_NAME)";SDKROOT=iphoneos;SUPPORTED_PLATFORMS="iphoneos iphonesimulator";SWIFT_EMIT_LOC_STRINGS=YES;SWIFT_VERSION=5.0;TARGETED_DEVICE_FAMILY=1; DEBUG_INFORMATION_FORMAT="dwarf-with-dsym";ENABLE_NS_ASSERTIONS=NO; BUNDLE_LOADER="$(BUILT_PRODUCTS_DIR)/SolarCast.app/SolarCast";TEST_HOST="$(BUNDLE_LOADER)";};name=Release;};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E9898A0EB58D6691901DFE9F={isa=XCConfigurationList;buildConfigurations=(889F1FAE4F6FAFB1172745EE,C5833D2EA874210DF0E21531,);defaultConfigurationIsVisible=0;defaultConfigurationName=Release;};
+		CE605FB886C05338BCB3D533={isa=XCConfigurationList;buildConfigurations=(A1361DA182130910B8F60860,4217FC1E248F2D2A5D8B5B6E,);defaultConfigurationIsVisible=0;defaultConfigurationName=Release;};
+		96484D38E310E39ECFA7B0FB={isa=XCConfigurationList;buildConfigurations=(3FBB2C8DFBB470B25A46F5E4,38158BAB21F20ADE7FA60885,);defaultConfigurationIsVisible=0;defaultConfigurationName=Release;};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E715737DA6FC0B2071D0D025={isa=XCRemoteSwiftPackageReference;repositoryURL="https://github.com/ceeK/Solar.git";requirement={kind=upToNextMajorVersion;minimumVersion=3.0.0;};};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18B7DC7F425B106DAD13B382={isa=XCSwiftPackageProductDependency;package=E715737DA6FC0B2071D0D025;productName=Solar;};
+/* End XCSwiftPackageProductDependency section */
+
+	};
+	rootObject=4DC844ABCCFC0D132D087C1C;
+}
