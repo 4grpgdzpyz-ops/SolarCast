@@ -1,0 +1,90 @@
+name: Import Code ZIP
+
+on:
+  workflow_dispatch:
+    inputs:
+      configuration:
+        description: Build configuration
+        required: true
+        default: Release
+        type: choice
+        options:
+          - Debug
+          - Release
+      clean:
+        description: Run clean workflow
+        required: true
+        type: boolean
+        default: true
+      build:
+        description: Run build workflow
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  clean:
+    if: ${{ inputs.clean }}
+    uses: ./.github/workflows/clean.yml
+  
+  import:
+    if: ${{ always() }}
+    needs:
+      - clean
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref }}
+      
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      
+      - name: Download ZIP from Nextcloud
+        env:
+          NEXTCLOUD_URL: ${{ secrets.NEXTCLOUD_URL }}
+          NEXTCLOUD_USER: ${{ secrets.NEXTCLOUD_USER }}
+          NEXTCLOUD_PASSWORD: ${{ secrets.NEXTCLOUD_PASSWORD }}
+          NEXTCLOUD_FILE: ${{ secrets.NEXTCLOUD_FILE }}
+        run: |
+          ENCODED_USER="${NEXTCLOUD_USER//@/%40}"
+          curl -fL \
+            -u "$NEXTCLOUD_USER:$NEXTCLOUD_PASSWORD" \
+            "$NEXTCLOUD_URL/remote.php/dav/files/$ENCODED_USER/$NEXTCLOUD_FILE" \
+            -o upload.zip
+      
+      - name: Extract ZIP and flatten
+        shell: bash
+        run: |
+          unzip -q upload.zip -d extracted
+          rm upload.zip
+          ROOT_DIR=$(find extracted -mindepth 1 -maxdepth 1 -type d | head -n 1)
+          shopt -s dotglob
+          mv "$ROOT_DIR"/* .
+          rm -rf extracted
+      
+      - name: Commit and push
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Import from Nextcloud"
+          git pull --rebase
+          git push
+  
+  build:
+    if: ${{ inputs.build }}
+    needs: import
+    uses: ./.github/workflows/build.yml
+    with:
+      configuration: ${{ inputs.configuration }}
