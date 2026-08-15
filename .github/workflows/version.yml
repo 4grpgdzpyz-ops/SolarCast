@@ -1,0 +1,107 @@
+name: Bump Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      increment:
+        description: What to increment
+        required: true
+        type: choice
+        default: build
+        options:
+          - build
+          - minor
+          - major
+
+permissions:
+  contents: write
+
+jobs:
+  bump:
+    runs-on: macos-latest
+
+    env:
+      INFO_PLIST: Resources/Info.plist
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Read current values
+        id: current
+        run: |
+          VERSION=$(
+            /usr/libexec/PlistBuddy \
+              -c "Print :CFBundleShortVersionString" \
+              "$INFO_PLIST"
+          )
+
+          BUILD=$(
+            /usr/libexec/PlistBuddy \
+              -c "Print :CFBundleVersion" \
+              "$INFO_PLIST"
+          )
+
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "build=$BUILD" >> "$GITHUB_OUTPUT"
+
+      - name: Calculate new values
+        id: bump
+        run: |
+          VERSION="${{ steps.current.outputs.version }}"
+          BUILD="${{ steps.current.outputs.build }}"
+
+          IFS='.' read -ra PARTS <<< "$VERSION"
+
+          while [ ${#PARTS[@]} -lt 2 ]; do
+            PARTS+=(0)
+          done
+
+          MAJOR=${PARTS[0]}
+          MINOR=${PARTS[1]}
+
+          case "${{ inputs.increment }}" in
+            major)
+              MAJOR=$((MAJOR + 1))
+              MINOR=0
+              BUILD=0
+              ;;
+            minor)
+              MINOR=$((MINOR + 1))
+              BUILD=0
+              ;;
+            build)
+              BUILD=$((BUILD + 1))
+              ;;
+          esac
+
+          NEW_VERSION="${MAJOR}.${MINOR}"
+
+          echo "new_version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+          echo "new_build=$BUILD" >> "$GITHUB_OUTPUT"
+
+          echo "Effective version: ${NEW_VERSION}.${BUILD}"
+
+      - name: Update Info.plist
+        run: |
+          /usr/libexec/PlistBuddy \
+            -c "Set :CFBundleShortVersionString ${{ steps.bump.outputs.new_version }}" \
+            "$INFO_PLIST"
+
+          /usr/libexec/PlistBuddy \
+            -c "Set :CFBundleVersion ${{ steps.bump.outputs.new_build }}" \
+            "$INFO_PLIST"
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add "$INFO_PLIST"
+
+          git commit -m \
+            "Bump version to ${{ steps.bump.outputs.new_version }}.${{ steps.bump.outputs.new_build }}" \
+            || exit 0
+
+          git push

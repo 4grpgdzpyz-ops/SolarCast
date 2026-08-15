@@ -1,0 +1,134 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  release:
+    runs-on: macos-latest
+
+    env:
+      INFO_PLIST: Resources/Info.plist
+      IPA_ARTIFACT: SolarCast-IPA
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Read version from Info.plist
+        id: version
+        run: |
+          VERSION=$(
+            /usr/libexec/PlistBuddy \
+              -c "Print :CFBundleShortVersionString" \
+              "$INFO_PLIST"
+          )
+
+          BUILD=$(
+            /usr/libexec/PlistBuddy \
+              -c "Print :CFBundleVersion" \
+              "$INFO_PLIST"
+          )
+
+          FULL_VERSION="${VERSION}.${BUILD}"
+          TAG="v${FULL_VERSION}"
+
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "build=$BUILD" >> "$GITHUB_OUTPUT"
+          echo "full_version=$FULL_VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+          echo "Release version: $FULL_VERSION"
+
+      - name: Find latest IPA artifact
+        id: artifact
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          RUN_ID=""
+
+          echo "Searching recent successful runs..."
+
+          for ID in $(
+            gh run list \
+              --status success \
+              --limit 100 \
+              --json databaseId \
+              --jq '.[].databaseId'
+          ); do
+            echo "Checking run $ID..."
+
+            rm -rf artifact-check
+
+            if gh run download \
+                "$ID" \
+                --name "$IPA_ARTIFACT" \
+                --dir artifact-check \
+                >/dev/null 2>&1; then
+              RUN_ID="$ID"
+              rm -rf artifact-check
+              break
+            fi
+          done
+
+          if [ -z "$RUN_ID" ]; then
+            echo "No workflow run containing '$IPA_ARTIFACT' was found."
+            exit 1
+          fi
+
+          echo "Found artifact in run $RUN_ID"
+
+          echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
+
+      - name: Download IPA artifact
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          gh run download \
+            "${{ steps.artifact.outputs.run_id }}" \
+            --name "$IPA_ARTIFACT" \
+            --dir artifacts
+
+          echo "Downloaded files:"
+          find artifacts -type f
+
+      - name: Locate and rename IPA
+        run: |
+          IPA=$(find artifacts -name "*.ipa" | head -1)
+
+          if [ -z "$IPA" ]; then
+            echo "No IPA found inside artifact."
+            exit 1
+          fi
+
+          TARGET="artifacts/SolarCast-${{ steps.version.outputs.full_version }}.ipa"
+
+          mv "$IPA" "$TARGET"
+
+          echo "Final IPA:"
+          ls -lah "$TARGET"
+
+      - name: Check if release already exists
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "${{ steps.version.outputs.tag }}" >/dev/null 2>&1; then
+            echo "Release '${{ steps.version.outputs.tag }}' already exists."
+            exit 1
+          fi
+
+      - name: Create GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          gh release create \
+            "${{ steps.version.outputs.tag }}" \
+            "artifacts/SolarCast-${{ steps.version.outputs.full_version }}.ipa" \
+            --title "SolarCast ${{ steps.version.outputs.full_version }}" \
+            --generate-notes
