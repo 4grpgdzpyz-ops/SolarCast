@@ -1,0 +1,59 @@
+name: Cleanup Actions
+
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+env:
+  GH_TOKEN: ${{ secrets.GH_PAT }}
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Delete all workflow runs
+        uses: actions/github-script@v9
+        with:
+          github-token: ${{ env.GH_TOKEN }}
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            const runs = await github.paginate(
+              github.rest.actions.listWorkflowRunsForRepo,
+              {
+                owner,
+                repo,
+                per_page: 100
+              }
+            );
+
+            let deleted = 0;
+
+            for (const run of runs) {
+              // Skip the currently running cleanup workflow
+              if (run.id === context.runId) {
+                continue;
+              }
+
+              core.info(`Deleting run ${run.id} (${run.name})`);
+
+              try {
+                await github.rest.actions.deleteWorkflowRun({
+                  owner,
+                  repo,
+                  run_id: run.id
+                });
+
+                deleted++;
+              } catch (err) {
+                core.warning(
+                  `Failed to delete ${run.id}: ${err.message}`
+                );
+              }
+            }
+
+            core.info(`Deleted ${deleted} workflow runs.`);
