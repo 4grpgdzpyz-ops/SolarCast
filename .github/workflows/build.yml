@@ -1,0 +1,64 @@
+name: Build IPA
+
+on:
+  workflow_call:
+    inputs:
+      configuration:
+        required: true
+        type: string
+  workflow_dispatch:
+    inputs:
+      configuration:
+        description: Build configuration
+        required: true
+        type: choice
+        default: Release
+        options:
+          - Debug
+          - Release
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref }}
+      
+      - name: Update to latest branch
+        run: |
+          git pull --rebase
+      
+      - name: Build
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project SolarCast.xcodeproj \
+            -scheme SolarCast \
+            -configuration "${{ inputs.configuration }}" \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            clean build
+
+      - name: Print relevant settings
+        run: |
+          xcodebuild \
+            -project SolarCast.xcodeproj \
+            -scheme SolarCast \
+            -showBuildSettings
+      
+      - name: Package IPA
+        run: |
+          APP=$(find build -name "*.app" | head -1)
+          mkdir Payload
+          cp -R "$APP" Payload/
+          zip -r SolarCast.ipa Payload
+      
+      - name: Upload IPA
+        uses: actions/upload-artifact@v7
+        with:
+          name: SolarCast-IPA
+          path: SolarCast.ipa
